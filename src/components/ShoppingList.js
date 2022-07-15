@@ -10,6 +10,10 @@ function ShoppingList({ items }) {
     setSelectedCategory(event.target.value);
   }
 
+  function handleSearchChange(){
+
+  }
+
   const itemsToDisplay = items.filter((item) => {
     if (selectedCategory === "All") return true;
 
@@ -19,7 +23,7 @@ function ShoppingList({ items }) {
   return (
     <div className="ShoppingList">
       <ItemForm />
-      <Filter onCategoryChange={handleCategoryChange} />
+      <Filter search = "testing" onSearchChange={handleSearchChange} onCategoryChange={handleCategoryChange} />
       <ul className="Items">
         {itemsToDisplay.map((item) => (
           <Item key={item.id} name={item.name} category={item.category} />
